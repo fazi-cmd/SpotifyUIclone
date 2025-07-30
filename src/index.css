@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-800::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar but still scrollable, then show on hover */
+.scrollbar-hover::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollbar-hover::-webkit-scrollbar-thumb {
+    background-color: rgba(107, 114, 128, 0.5);
+    /* gray-500 */
+    border-radius: 8px;
+    visibility: hidden;
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+/* Firefox */
+.scrollbar-hover {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hover:hover {
+    scrollbar-color: rgba(107, 114, 128, 0.5) transparent;
+}
+
+/* Lock page scrolling and set background */
+body {
+    overflow: hidden;
+    height: 100vh;
+    background-color: white;
+    /* or black for dark mode */
+}
